@@ -32,7 +32,7 @@ public class DataLoader implements ApplicationRunner {
         Course da = new Course("DA", "Inverness", 4);
         courseRepository.save(da);
 
-        Course cs = new Course("CS", "Glasgow", 3);
+        Course cs = new Course("CS", "Glasgow", 5);
         courseRepository.save(cs);
 
         Customer laura = new Customer("Laura", "Budapest", 17);
