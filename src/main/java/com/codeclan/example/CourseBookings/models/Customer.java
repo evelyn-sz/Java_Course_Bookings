@@ -2,6 +2,7 @@ package com.codeclan.example.CourseBookings.models;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -28,11 +29,30 @@ public class Customer {
     @JsonIgnoreProperties({"customer"})
     private List<Booking> bookings;
 
+//    @ManyToMany
+//    @JsonIgnoreProperties({"customers"})
+//    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+//    @JoinTable(
+//            name = "customers_courses",
+//            joinColumns = { @JoinColumn(
+//                    name = "customer_id",
+//                    nullable = false,
+//                    updatable = false
+//            )},
+//            inverseJoinColumns = {@JoinColumn(
+//                    name = "course_id",
+//                    nullable = false,
+//                    updatable = false
+//            )}
+//    )
+//    private List<Course> courses;
+
     public Customer(String name, String town, int age) {
         this.name = name;
         this.town = town;
         this.age = age;
         this.bookings = new ArrayList<>();
+//        this.courses = new ArrayList<>();
     }
 
     public Customer(){};

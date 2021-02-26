@@ -18,7 +18,7 @@ public class CourseController {
     CourseRepository courseRepository;
 
     @GetMapping(value="/courses")
-    public ResponseEntity<List<Course>> getCoursesByRating(
+    public ResponseEntity<List<Course>> getAllCoursesAndFilters(
             @RequestParam(name="rating", required = false) Integer rating
     ) {
         if (rating != null) {

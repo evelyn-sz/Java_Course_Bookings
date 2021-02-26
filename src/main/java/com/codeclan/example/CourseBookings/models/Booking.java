@@ -17,18 +17,18 @@ public class Booking {
 
     @ManyToOne
     @JsonIgnoreProperties({"bookings"})
-    @JoinColumn(name="course_id", nullable = false)
-    private Course course;
-
-    @ManyToOne
-    @JsonIgnoreProperties({"bookings"})
     @JoinColumn(name="customer_id", nullable = false)
     private Customer customer;
 
-    public Booking(String date, Course course, Customer customer) {
+    @ManyToOne
+    @JsonIgnoreProperties({"bookings"})
+    @JoinColumn(name="course_id", nullable = false)
+    private Course course;
+
+    public Booking(String date, Customer customer, Course course) {
         this.date = date;
-        this.course = course;
         this.customer = customer;
+        this.course = course;
     }
 
     public Booking(){};
